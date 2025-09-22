@@ -17,7 +17,10 @@ namespace HoldFast {
 		}
 
 		int GetRank() {
-			 return *(int*)(addr + Offsets::PlayerInitialDetails::Rank);
+			 
+			uintptr_t raw_rank = *(uintptr_t*)(addr + Offsets::PlayerInitialDetails::Rank);
+			return (int)(raw_rank);
+				
 		}
 
 		bool IsValid() {

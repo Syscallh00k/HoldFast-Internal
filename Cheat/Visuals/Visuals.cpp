@@ -25,6 +25,9 @@ void HoldFast::Visuals::DrawVisuals(HoldFast::ClientRoundPlayer round_player) {
 	Vector3 head_positon = player_bones.GetHead().GetPosition();
 	if (head_positon.IsZero())return;
 	
+	Weapon player_weapon = player_base.GetWeaponHolder().GetActiveWeapon();
+	
+	std::string held_item = player_weapon.GetDisplayName();
 	std::string username = player_details.GetUsername();
 	int rank = player_details.GetRank();
 
@@ -35,6 +38,11 @@ void HoldFast::Visuals::DrawVisuals(HoldFast::ClientRoundPlayer round_player) {
 	auto bounds = player_bones.get_bounds(5.0f, cache.view_matrix);
 	if (bounds.onscreen) {
 		ImDrawList* draw_list = ImGui::GetBackgroundDrawList();
+
+		//text align :)
+		float bottom_jump = 3.0f;
+		float top_jump = 10.0f;
+
 		float box_width = bounds.right - bounds.left;
 		float box_height = bounds.bottom - bounds.top;
 		float center_x = bounds.left + box_width * 0.5f;
@@ -45,12 +53,12 @@ void HoldFast::Visuals::DrawVisuals(HoldFast::ClientRoundPlayer round_player) {
 			draw_list->AddRect(ImVec2(bounds.left - 1, bounds.top - 1), ImVec2(bounds.right + 1, bounds.bottom + 1), ImColor(255, 255, 255, 255));
 		}
 
-		if (HoldFast::Features::Visuals::corner_box) 
-			Draw::DrawCorneredBox(bounds.left, bounds.top, box_width, box_height, ImColor(0, 0, 0, 255),2.5f);
-			Draw::DrawCorneredBox(bounds.left, bounds.top, box_width, box_height, ImColor(255, 255, 255, 255),1.0f);
+		if (HoldFast::Features::Visuals::corner_box){
+			Draw::DrawCorneredBox(bounds.left, bounds.top, box_width, box_height, ImColor(0, 0, 0, 255), 2.5f);
+			Draw::DrawCorneredBox(bounds.left, bounds.top, box_width, box_height, ImColor(255, 255, 255, 255), 1.0f);
+		}
+
 		
-		
-		float bottom_jump = 3.0f;
 		if (HoldFast::Features::Visuals::distance) {
 			bottom_jump += 12.0f;
 			std::string text = std::string(std::to_string(int(distance)) + "M");
@@ -59,8 +67,14 @@ void HoldFast::Visuals::DrawVisuals(HoldFast::ClientRoundPlayer round_player) {
 		}
 
 		if (HoldFast::Features::Visuals::name) {
+			top_jump += 10.0f;
 			ImVec2 size = ImGui::CalcTextSize(username.c_str());
 			Draw::draw_text_outline_font(bounds.left + (box_width * 0.5f) - (size.x * 0.5f), bounds.top - 10, ImColor(0, 255, 0, 255), username.c_str(), 1.0f);
+		}
+
+		if (HoldFast::Features::Visuals::held_item) {
+			ImVec2 size = ImGui::CalcTextSize(held_item.c_str());
+			Draw::draw_text_outline_font(bounds.left + (box_width * 0.5f) - (size.x * 0.5f), bounds.top - top_jump, ImColor(0, 255, 0, 255), username.c_str(), 1.0f);
 		}
 
 		if (HoldFast::Features::Visuals::rank) {

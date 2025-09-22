@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36429.23 d17.14
+VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HoldFast-Internal", "HoldFast-Internal\HoldFast-Internal.vcxproj", "{2E7BD056-AEB6-42DC-A4AA-DDDEC87BCD53}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HoldFast-Internal", "HoldFast-Internal.vcxproj", "{2E7BD056-AEB6-42DC-A4AA-DDDEC87BCD53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E6B680F3-2D34-452A-8F64-46E244A8DB5D}
+		SolutionGuid = {F0B2E025-06BE-4D7A-9456-B5F20EA95444}
 	EndGlobalSection
 EndGlobal

@@ -19,6 +19,8 @@
 #include "../Render/draw.h"
 #include "../Utils/vector.h"
 
+//!all clients inhearite base classes!
+//! 
 //sdk
 #include "TransformData/TransformData.h"
 #include "Transformation/Transformation.h"
@@ -27,8 +29,12 @@
 #include "ClientRoundPlayerManager/ClientRoundPlayerManager.h"
 #include "PlayerInitialDetails/PlayerInitialDetails.h"
 #include "RoundPlayerInformation/RoundPlayerInformation.h"
+#include "CommonGlobalVariables/CommonGlobalVariables.h"
 #include "BipedReferences/BipedReferences.h"
 #include "ModelProperties/ModelProperties.h"
+#include "FirearmWeaponProperties/FirearmWeaponProperties.h"
+#include "Weapon/Weapon.h"
+#include "ClientWeaponHolder/ClientWeaponHolder.h"
 #include "PlayerActorInitializer/PlayerActorInitializer.h"
 #include "ClientPlayerBase/ClientPlayerBase.h"
 #include "ClientRoundPlayer/ClientRoundPlayer.h"

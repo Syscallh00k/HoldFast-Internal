@@ -63,6 +63,9 @@
     <ClCompile Include="Cheat\Visuals\Visuals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cheat\Misc\Misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\unityStructs.h">
@@ -183,6 +186,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDK\TransformData\TransformData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ClientWeaponHolder\ClientWeaponHolder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Weapon\Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\FirearmWeaponProperties\FirearmWeaponProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\CommonGlobalVariables\CommonGlobalVariables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cheat\Misc\Misc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

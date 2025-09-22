@@ -83,6 +83,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 		ImGui::Checkbox("health bar", &HoldFast::Features::Visuals::health);
 		ImGui::Checkbox("skeleton", &HoldFast::Features::Visuals::skeleton);
 		ImGui::Checkbox("remove team", &HoldFast::Features::Visuals::remove_team);
+		ImGui::SliderFloat("Render Distance", &HoldFast::Features::Visuals::render_distance, 25.0f, 500.0f, "%1.f");
 		ImGui::End();
 	}
 	Draw::draw_text_outline_font(25, 25, ImColor(255, 0, 155, 255), "HoldFast Legend Hack", 1.0f);

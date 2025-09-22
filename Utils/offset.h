@@ -18,6 +18,14 @@ namespace HoldFast {
 			inline float render_distance = 400.0f;
 			inline bool remove_team = false;
 		}
+
+		namespace Aimbot {
+
+		}
+
+		namespace Misc {
+			inline bool no_recoil;
+		}
 	}
 	namespace Instance {
 		inline uintptr_t ClientComponent_Instance;
@@ -32,6 +40,8 @@ namespace HoldFast {
 		inline uintptr_t(*get_right)(uintptr_t);
 		inline uintptr_t(*get_up)(uintptr_t);
 		inline uintptr_t(*get_down)(uintptr_t);
+		inline uintptr_t(*get_ActiveWeaponDetails)(uintptr_t);
+		inline uintptr_t(*ResolveFirearmWeaponProperties)(uintptr_t);
 	}
 	namespace FunctionLocation {
 		inline void* GetAllRoundPlayers = 0;
@@ -43,6 +53,8 @@ namespace HoldFast {
 		inline void* get_right = 0;
 		inline void* get_up = 0;
 		inline void* get_down = 0;
+		inline void* get_ActiveWeaponDetails = 0;
+		inline void* ResolveFirearmWeaponProperties = 0;
 	}
 	namespace Offsets {
 		inline uintptr_t ClientRoundPlayerManager = 0;
@@ -52,10 +64,23 @@ namespace HoldFast {
 		inline uintptr_t ClientGameManager = 0;
 		inline uintptr_t initializedOnMap = 0;
 
+		namespace GlobalVariables {
+			inline uintptr_t ForwardRunSpeed = 0;
+			inline uintptr_t ForwardWalkSpeed = 0;
+			inline uintptr_t serverUpdateProperties = 0;
+			inline uintptr_t characterJumpForceScale = 0;
+			inline uintptr_t infiniteFirearmAmmo = 0;
+			inline uintptr_t firearmBulletTravelSpeed = 0;
+		}
+		namespace Weapon {
+			inline uintptr_t displayName = 0;
+		}
 		namespace PlayerBase {
 			inline uintptr_t CurrentRoundPlayerInformation = 0;
 			inline uintptr_t InitialDetails = 0;
 			inline uintptr_t playerActorInitializer = 0;
+			inline uintptr_t ClientWeaponHolder = 0;
+			inline uintptr_t commonGlobalVariables = 0;
 		}
 		namespace PlayerInitialDetails {
 			inline uintptr_t DisplayName = 0;

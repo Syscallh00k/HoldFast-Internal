@@ -2,6 +2,7 @@
 #define ENTRY_H
 
 #include "../Visuals/visuals.h"
+#include "../Misc/Misc.h"
 
 namespace HoldFast {
 	namespace Entry {
@@ -25,6 +26,8 @@ namespace HoldFast {
 
 				esp.DrawVisuals(round_player);
 			}
+
+			misc.DoMisc();
 		}
 	}
 }

@@ -11,10 +11,11 @@ DWORD WINAPI MainThread(LPVOID lpReserved) {
         }
     } while (!init_hook);
     return TRUE;
-}
+}\
 void cacheThread() {
     HoldFast::cache.PlayerThread();
 }
+
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
                        LPVOID lpReserved

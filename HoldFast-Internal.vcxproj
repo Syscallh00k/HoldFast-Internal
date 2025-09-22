@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cheat\Cache\cache.cpp" />
+    <ClCompile Include="Cheat\Misc\Misc.cpp" />
     <ClCompile Include="Cheat\Visuals\Visuals.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="Cheat\Cache\cache.h" />
     <ClInclude Include="Cheat\Entry\Entry.h" />
+    <ClInclude Include="Cheat\Misc\Misc.h" />
     <ClInclude Include="Cheat\Visuals\Visuals.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -191,6 +193,9 @@
     <ClInclude Include="SDK\ClientPlayerBase\ClientPlayerBase.h" />
     <ClInclude Include="SDK\ClientRoundPlayerManager\ClientRoundPlayerManager.h" />
     <ClInclude Include="SDK\ClientRoundPlayer\ClientRoundPlayer.h" />
+    <ClInclude Include="SDK\ClientWeaponHolder\ClientWeaponHolder.h" />
+    <ClInclude Include="SDK\CommonGlobalVariables\CommonGlobalVariables.h" />
+    <ClInclude Include="SDK\FirearmWeaponProperties\FirearmWeaponProperties.h" />
     <ClInclude Include="SDK\ModelProperties\ModelProperties.h" />
     <ClInclude Include="SDK\PlayerActorInitializer\PlayerActorInitializer.h" />
     <ClInclude Include="SDK\PlayerInitialDetails\PlayerInitialDetails.h" />
@@ -198,6 +203,7 @@
     <ClInclude Include="SDK\sdk.h" />
     <ClInclude Include="SDK\Transformation\Transformation.h" />
     <ClInclude Include="SDK\TransformData\TransformData.h" />
+    <ClInclude Include="SDK\Weapon\Weapon.h" />
     <ClInclude Include="Utils\includes.h" />
     <ClInclude Include="Utils\offset.h" />
     <ClInclude Include="Utils\unityStructs.h" />

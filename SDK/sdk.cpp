@@ -50,6 +50,8 @@ HoldFast::SDK::SDK()
 		NaResolver::Class debug_class = resolver->GetClass(assembly_path("UnityEngine.CoreModule.dll"), "UnityEngine", "Debug");
 		NaResolver::Class transformation_class = resolver->GetClass(assembly_path("UnityEngine.CoreModule.dll"), "UnityEngine", "Transform");
 		NaResolver::Class PlayerOwner_class = resolver->GetClass(assembly_path("Assembly-CSharp.dll"), "HoldfastGame", "PlayerOwne");
+		NaResolver::Class CommonGlobalVariables_class = resolver->GetClass(assembly_path("Assembly-CSharp.dll"), "HoldfastGame", "CommonGlobalVariables");
+		NaResolver::Class FirearmWeaponProperties_class = resolver->GetClass(assembly_path("Assembly-CSharp.dll"), "HoldfastGame", "FirearmWeaponProperties");
 		NaResolver::Class Stack_class = resolver->GetClass(assembly_path("mscorlib.dll"), "System.Collections.Generic", "Stack<T>");
 		NaResolver::Class DamageableObjectApplyDamagePacket_class = resolver->GetClass(assembly_path("Assembly-CSharp.dll"), "HoldfastGame", "DamageableObjectApplyDamagePacket");
 		NaResolver::Class HomelessMethods_class = resolver->GetClass(assembly_path("Assembly-CSharp.dll"), "HoldfastGame", "HomelessMethods");
@@ -103,6 +105,16 @@ HoldFast::SDK::SDK()
 		get_offset(PlayerInitialDetails_class, "DisplayName", HoldFast::Offsets::PlayerInitialDetails::DisplayName);
 		get_offset(ModelProperties_class, "bipedReferences", HoldFast::Offsets::ModelProperties::bipedReferences);
 		get_offset(RoundPlayer_Class, "PlayerTransformData", HoldFast::Offsets::PlayerTransformData);
+		get_offset(ClientPlayerBase_class, "clientWeaponHolder", HoldFast::Offsets::PlayerBase::ClientWeaponHolder);
+		get_offset(Weapon_class, "displayName", HoldFast::Offsets::Weapon::displayName);
+		get_offset(PlayerBase_Class, "commonGlobalVariables", HoldFast::Offsets::PlayerBase::commonGlobalVariables);
+
+		get_offset(CommonGlobalVariables_class, "<ForwardRunSpeed>k__BackingField", HoldFast::Offsets::GlobalVariables::ForwardRunSpeed);
+		get_offset(CommonGlobalVariables_class, "<ForwardWalkSpeed>k__BackingField", HoldFast::Offsets::GlobalVariables::ForwardWalkSpeed);
+		get_offset(CommonGlobalVariables_class, "characterJumpForceScale", HoldFast::Offsets::GlobalVariables::characterJumpForceScale);
+		get_offset(CommonGlobalVariables_class, "serverUpdateProperties", HoldFast::Offsets::GlobalVariables::serverUpdateProperties);
+		get_offset(CommonGlobalVariables_class, "infiniteFirearmAmmo", HoldFast::Offsets::GlobalVariables::infiniteFirearmAmmo);
+		get_offset(CommonGlobalVariables_class, "firearmBulletTravelSpeed ", HoldFast::Offsets::GlobalVariables::firearmBulletTravelSpeed);
 
 		//bones
 		get_offset(BipedReferences_class, "root", HoldFast::Offsets::BipedReferences::root);
@@ -127,6 +139,8 @@ HoldFast::SDK::SDK()
 		get_method_address(PlayerBase_Class, "get_SpawnedAndAlive", HoldFast::FunctionLocation::Is_Alive_Spawned);
 		get_method_address(camera_class, "get_main", HoldFast::FunctionLocation::get_MainCamera);
 		get_method_address(PlayerActorInitializer_class, "get_CurrentModel", HoldFast::FunctionLocation::get_CurrentModel);
+		get_method_address(WeaponHolder_class, "get_ActiveWeaponDetails", HoldFast::FunctionLocation::get_ActiveWeaponDetails);
+		get_method_address(FirearmWeaponProperties_class, "ResolveFirearmWeaponProperties", HoldFast::FunctionLocation::ResolveFirearmWeaponProperties);
 
 		get_method_address(TransformData_class, "get_left", HoldFast::FunctionLocation::get_left);
 		get_method_address(TransformData_class, "get_right", HoldFast::FunctionLocation::get_right);
@@ -140,6 +154,8 @@ HoldFast::SDK::SDK()
 		HoldFast::GameFunctions::get_LocalPlayerActive = *reinterpret_cast<bool(*)(uintptr_t)>(FunctionLocation::get_LocalPlayerActive);
 		HoldFast::GameFunctions::get_MainCamera = *reinterpret_cast<uintptr_t(*)()>(FunctionLocation::get_MainCamera);
 		HoldFast::GameFunctions::get_CurrentModel = *reinterpret_cast<uintptr_t(*)(uintptr_t)>(FunctionLocation::get_CurrentModel);
+		HoldFast::GameFunctions::get_ActiveWeaponDetails = *reinterpret_cast<uintptr_t(*)(uintptr_t)>(FunctionLocation::get_ActiveWeaponDetails);
+		HoldFast::GameFunctions::ResolveFirearmWeaponProperties = *reinterpret_cast<uintptr_t(*)(uintptr_t)>(FunctionLocation::ResolveFirearmWeaponProperties);
 
 		HoldFast::GameFunctions::get_left = *reinterpret_cast<uintptr_t(*)(uintptr_t)>(FunctionLocation::get_left);
 		HoldFast::GameFunctions::get_right = *reinterpret_cast<uintptr_t(*)(uintptr_t)>(FunctionLocation::get_right);

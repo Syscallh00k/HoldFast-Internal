@@ -9,10 +9,12 @@ namespace HoldFast {
 		Weapon(uintptr_t base) : addr(base) {}
 
 		FirearmWeaponProperties ResolveFirearmProperties() {
+			if (!IsValid())return NULL;
 			return GameFunctions::ResolveFirearmWeaponProperties(addr);
 		}
 
 		std::string GetDisplayName() {
+			if (!IsValid())return "";
 			uintptr_t raw_name = *(uintptr_t*)(addr + Offsets::Weapon::displayName);
 			if (!raw_name)return "";
 			wchar_t* wide_name = reinterpret_cast<wchar_t*>(raw_name + 0x14);

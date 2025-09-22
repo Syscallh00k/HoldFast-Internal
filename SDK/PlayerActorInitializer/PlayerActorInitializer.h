@@ -9,9 +9,11 @@ namespace HoldFast {
 		PlayerActorInitializer(uintptr_t base) : addr(base) {}
 
 		bool IsLocalPlayer() {
+			if (!IsValid())return NULL;
 			return *(bool*)(addr + Offsets::PlayerActorInitializer::is_localplayer);
 		}
 		ModelProperties GetModelProperties() {
+			if (!IsValid())return NULL;
 			uintptr_t raw_mp = GameFunctions::get_CurrentModel(addr);
 			if (!raw_mp) return NULL;
 			return ModelProperties(raw_mp);

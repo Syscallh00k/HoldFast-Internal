@@ -12,7 +12,7 @@ namespace HoldFast {
 	public:
 		Matrix4x4 view_matrix;
 		std::mutex player_mutex;
-		std::vector<ClientRoundPlayer> player_list;
+		std::vector<uintptr_t> player_list;
 		ClientRoundPlayer local_player{0};
 
 		void PlayerThread();

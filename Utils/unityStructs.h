@@ -7,6 +7,19 @@
 
 namespace HoldFast {
 	namespace Enums {
+		enum PlayerPlatform : byte
+		{
+			// Token: 0x04000569 RID: 1385
+			Nonbe,
+			// Token: 0x0400056A RID: 1386
+			Steam,
+			// Token: 0x0400056B RID: 1387
+			Xbox,
+			// Token: 0x0400056C RID: 1388
+			PSN,
+			// Token: 0x0400056D RID: 1389
+			CustomLogin = 50
+		};
 		enum PlayerActions : int
 		{
 			// Token: 0x04000309 RID: 777

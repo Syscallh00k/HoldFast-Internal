@@ -18,6 +18,7 @@ namespace HoldFast {
 			return TransformData(raw_pb);
 		}
 
+	
 		ClientRoundPlayer(uintptr_t base) : addr(base) {}
 
 	private:

@@ -14,6 +14,7 @@ namespace HoldFast {
 			inline bool distance = false;
 			inline bool name = false;
 			inline bool rank = false;
+			inline bool platform = false;
 			inline bool skeleton = false;
 			inline float render_distance = 400.0f;
 			inline bool remove_team = false;
@@ -25,6 +26,7 @@ namespace HoldFast {
 
 		namespace Misc {
 			inline bool no_recoil;
+			inline bool instant_hit;
 		}
 	}
 	namespace Instance {
@@ -63,7 +65,11 @@ namespace HoldFast {
 		inline uintptr_t ClientPlayerBase = 0;
 		inline uintptr_t ClientGameManager = 0;
 		inline uintptr_t initializedOnMap = 0;
+		inline uintptr_t PlayerStartData = 0;
 
+		namespace SpawnData {
+			inline uintptr_t SquadID = 0;
+		}
 		namespace GlobalVariables {
 			inline uintptr_t ForwardRunSpeed = 0;
 			inline uintptr_t ForwardWalkSpeed = 0;
@@ -78,9 +84,11 @@ namespace HoldFast {
 		namespace PlayerBase {
 			inline uintptr_t CurrentRoundPlayerInformation = 0;
 			inline uintptr_t InitialDetails = 0;
+			inline uintptr_t PlayerPlatform = 0;
 			inline uintptr_t playerActorInitializer = 0;
 			inline uintptr_t ClientWeaponHolder = 0;
 			inline uintptr_t commonGlobalVariables = 0;
+			inline uintptr_t health = 0;
 		}
 		namespace PlayerInitialDetails {
 			inline uintptr_t DisplayName = 0;

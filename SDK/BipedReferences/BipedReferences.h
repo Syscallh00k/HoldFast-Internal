@@ -14,6 +14,7 @@ namespace HoldFast {
 			return true;
 		}
 		Transformation GetRoot() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::root);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -22,6 +23,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetPelvis() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::pelvis);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -30,6 +32,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetLeftThigh() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::leftThigh);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -38,6 +41,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetLeftCalf() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::leftCalf);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -46,6 +50,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetLeftFoot() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::leftFoot);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -54,6 +59,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetRightThigh() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::rightThigh);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -62,6 +68,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetRightCalf() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::rightCalf);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -70,6 +77,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetRightFoot() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::rightFoot);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -78,14 +86,16 @@ namespace HoldFast {
 		}
 
 		Transformation GetLeftUpperArm() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::leftUpperArm);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
-			if (!cached_ptr || cached_ptr == 0xFFFFFFFFFFFFFFFF || cached_ptr < 0x10000) return NULL;
+			if (!cached_ptr) return NULL;
 			return Transformation(cached_ptr);
 		}
 
 		Transformation GetLeftForearm() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::leftForearm);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -94,6 +104,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetLeftHand() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::leftHand);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -102,6 +113,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetRightUpperArm() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::rightUpperArm);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -110,6 +122,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetRightForearm() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::rightForearm);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -118,6 +131,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetRightHand() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::rightHand);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);
@@ -126,6 +140,7 @@ namespace HoldFast {
 		}
 
 		Transformation GetHead() {
+			if (!IsValid())return NULL;
 			uintptr_t raw = *(uintptr_t*)(addr + Offsets::BipedReferences::head);
 			if (!raw) return NULL;
 			uintptr_t cached_ptr = *(uintptr_t*)(raw + 0x10);

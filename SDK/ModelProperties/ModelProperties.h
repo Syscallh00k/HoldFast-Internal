@@ -9,6 +9,7 @@ namespace HoldFast {
 		ModelProperties(uintptr_t base) : addr(base) {}
 
 		BipedReferences GetBipedReferences() {
+			if (!IsValid())return NULL;
 			uintptr_t raw_mp = *(uintptr_t*)(addr + Offsets::ModelProperties::bipedReferences);
 			if (!raw_mp)return NULL;
 			return BipedReferences(raw_mp);

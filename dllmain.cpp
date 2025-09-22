@@ -11,7 +11,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved) {
         }
     } while (!init_hook);
     return TRUE;
-}\
+}
+
 void cacheThread() {
     HoldFast::cache.PlayerThread();
 }

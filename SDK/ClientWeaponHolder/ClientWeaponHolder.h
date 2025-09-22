@@ -9,6 +9,7 @@ namespace HoldFast {
 		ClientWeaponHolder(uintptr_t base) : addr(base) {}
 
 		Weapon GetActiveWeapon() {
+			if (!IsValid())return NULL;
 			return GameFunctions::get_ActiveWeaponDetails(addr);
 		}
 

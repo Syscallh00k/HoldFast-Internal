@@ -28,7 +28,7 @@ void HoldFast::Cache::PlayerThread(){
 
 		cache.UpdateViewMatrix();
 
-		std::vector<ClientRoundPlayer> temp_list;
+		std::vector<uintptr_t> temp_list;
 
 		for (auto i{ 0 }; i < size; i++) {
 			uintptr_t raw_rp = *(uintptr_t*)(item + 0x20 + (i * 0x8));
@@ -48,7 +48,7 @@ void HoldFast::Cache::PlayerThread(){
 				continue;
 			}
 
-			temp_list.push_back(round_player);
+			temp_list.push_back(raw_rp);
 		}
 
 		std::lock_guard<std::mutex> lock(cache.player_mutex);

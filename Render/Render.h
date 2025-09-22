@@ -82,7 +82,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 		ImGui::Checkbox("held item", &HoldFast::Features::Visuals::held_item);
 		ImGui::Checkbox("health bar", &HoldFast::Features::Visuals::health);
 		ImGui::Checkbox("skeleton", &HoldFast::Features::Visuals::skeleton);
+		ImGui::Checkbox("platform", &HoldFast::Features::Visuals::platform);
 		ImGui::Checkbox("remove team", &HoldFast::Features::Visuals::remove_team);
+		ImGui::Checkbox("Instant Hit", &HoldFast::Features::Misc::instant_hit);
 		ImGui::SliderFloat("Render Distance", &HoldFast::Features::Visuals::render_distance, 25.0f, 500.0f, "%1.f");
 		ImGui::End();
 	}

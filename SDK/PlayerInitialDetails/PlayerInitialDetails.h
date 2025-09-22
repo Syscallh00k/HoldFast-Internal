@@ -9,6 +9,7 @@ namespace HoldFast {
 		PlayerInitialDetails(uintptr_t base) : addr(base) {}
 
 		std::string GetUsername() {
+			if (!IsValid())return NULL;
 			uintptr_t raw_name = *(uintptr_t*)(addr + Offsets::PlayerInitialDetails::DisplayName);
 			if (!raw_name)return "";
 			wchar_t* wide_name = reinterpret_cast<wchar_t*>(raw_name + 0x14);
@@ -17,10 +18,8 @@ namespace HoldFast {
 		}
 
 		int GetRank() {
-			 
-			uintptr_t raw_rank = *(uintptr_t*)(addr + Offsets::PlayerInitialDetails::Rank);
-			return (int)(raw_rank);
-				
+			if (!IsValid())return NULL;
+			 return *(int*)(addr + Offsets::PlayerInitialDetails::Rank);	
 		}
 
 		bool IsValid() {

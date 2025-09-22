@@ -28,6 +28,7 @@
 #include "ClientComponentReferenceManager/ClientComponentReferenceManager.h"
 #include "ClientRoundPlayerManager/ClientRoundPlayerManager.h"
 #include "PlayerInitialDetails/PlayerInitialDetails.h"
+#include "PlayerSpawnData/PlayerSpawnData.h"
 #include "RoundPlayerInformation/RoundPlayerInformation.h"
 #include "CommonGlobalVariables/CommonGlobalVariables.h"
 #include "BipedReferences/BipedReferences.h"

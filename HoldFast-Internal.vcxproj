@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\parke\OneDrive\Desktop\HoldFast-Internal\HoldFast-Internal\HoldFast-Internal\kiero\minhook\include;C:\Users\parke\Desktop\HoldFast-Internal\HoldFast-Internal\kiero\minhook\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cheat\Aimbot\Aimbot.cpp" />
     <ClCompile Include="Cheat\Cache\cache.cpp" />
     <ClCompile Include="Cheat\Misc\Misc.cpp" />
     <ClCompile Include="Cheat\Visuals\Visuals.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="SDK\sdk.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cheat\Aimbot\Aimbot.h" />
     <ClInclude Include="Cheat\Cache\cache.h" />
     <ClInclude Include="Cheat\Entry\Entry.h" />
     <ClInclude Include="Cheat\Misc\Misc.h" />
@@ -199,6 +201,7 @@
     <ClInclude Include="SDK\ModelProperties\ModelProperties.h" />
     <ClInclude Include="SDK\PlayerActorInitializer\PlayerActorInitializer.h" />
     <ClInclude Include="SDK\PlayerInitialDetails\PlayerInitialDetails.h" />
+    <ClInclude Include="SDK\PlayerSpawnData\PlayerSpawnData.h" />
     <ClInclude Include="SDK\RoundPlayerInformation\RoundPlayerInformation.h" />
     <ClInclude Include="SDK\sdk.h" />
     <ClInclude Include="SDK\Transformation\Transformation.h" />

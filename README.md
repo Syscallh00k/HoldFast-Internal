@@ -35,7 +35,5 @@ This project includes an auto-updating SDK that keeps the cheat compatible with 
 
 ## Notes
 
-* Internal-only cheat for improved performance and stability  
 * Uses ImGui for rendering  
-* Modular architecture for easy feature toggling  
-* Designed for learning about memory manipulation and SDK generation
+* Designed for learning about memory manipulation
